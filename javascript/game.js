@@ -165,9 +165,9 @@ function preload() {
     let levelStyle = isLevelOverworld ? 'overworld' : 'underground';
 
     // Load entities sprites
-    this.load.spritesheet('mario', 'assets/entities/mario.png', { frameWidth: 18, frameHeight: 16 });
-    this.load.spritesheet('mario-grown', 'assets/entities/mario-grown.png', { frameWidth: 18, frameHeight: 32 });
-    this.load.spritesheet('mario-fire', 'assets/entities/mario-fire.png', { frameWidth: 18, frameHeight: 32 });
+    this.load.spritesheet('irys', 'assets/entities/irys.png', { frameWidth: 18, frameHeight: 16 });
+    this.load.spritesheet('irys-grown', 'assets/entities/irys-grown.png', { frameWidth: 18, frameHeight: 32 });
+    this.load.spritesheet('irys-fire', 'assets/entities/irys-fire.png', { frameWidth: 18, frameHeight: 32 });
     this.load.spritesheet('goomba', 'assets/entities/' + levelStyle + '/goomba.png', { frameWidth: 16, frameHeight: 16 });
     this.load.spritesheet('koopa', 'assets/entities/koopa.png', { frameWidth: 16, frameHeight: 24 });
     this.load.spritesheet('shell', 'assets/entities/shell.png', { frameWidth: 16, frameHeight: 15 });
@@ -684,7 +684,7 @@ function teleportToLevelEnd(player, trigger) {
 
     this.cameras.main.fadeOut(450, 0, 0, 0);
 
-    player.anims.play(playerState > 0 ? playerState == 1 ? 'grown-mario-run'  : 'fire-mario-run' : 'run', true).flipX = false;
+    player.anims.play(playerState > 0 ? playerState == 1 ? 'grown-irys-run'  : 'fire-irys-run' : 'run', true).flipX = false;
 
     this.undergroundRoof.destroy();
 
@@ -821,11 +821,11 @@ function consumeMushroom(player, mushroom) {
     playerBlocked = true;
     this.anims.pauseAll();
     this.physics.pause();
-    player.setTint(0xfefefe).anims.play('grown-mario-idle');
+    player.setTint(0xfefefe).anims.play('grown-irys-idle');
     let i = 0;
     let interval = setInterval(() => {
         i++;
-        player.anims.play(i % 2 === 0 ? 'grown-mario-idle' : 'idle');
+        player.anims.play(i % 2 === 0 ? 'grown-irys-idle' : 'idle');
         if (i > 5) {
             clearInterval(interval);
             player.clearTint();
@@ -852,17 +852,17 @@ function consumeFireflower(player, fireFlower) {
     if (playerState > 1 )
     return;
 
-    let anim = playerState > 0 ? 'grown-mario-idle' : 'idle';
+    let anim = playerState > 0 ? 'grown-irys-idle' : 'idle';
 
     playerBlocked = true;
     this.anims.pauseAll();
     this.physics.pause();
 
-    player.setTint(0xfefefe).anims.play('fire-mario-idle');
+    player.setTint(0xfefefe).anims.play('fire-irys-idle');
     let i = 0;
     let interval = setInterval(() => {
         i++;
-        player.anims.play(i % 2 === 0 ? 'fire-mario-idle' : anim);
+        player.anims.play(i % 2 === 0 ? 'fire-irys-idle' : anim);
         if (i > 5) {
             clearInterval(interval);
             player.clearTint();

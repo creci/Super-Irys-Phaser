@@ -1,67 +1,67 @@
 function createAnimations() {
 
-    //> Mario animations
+    //> Irys animations
     this.anims.create({
         key: 'idle',
-        frames: [{ key: 'mario', frame: 0 }]
+        frames: [{ key: 'irys', frame: 0 }]
     });
     this.anims.create({
         key: 'run',
-        frames: this.anims.generateFrameNumbers('mario', { start: 3, end: 1 }),
+        frames: this.anims.generateFrameNumbers('irys', { start: 3, end: 1 }),
         frameRate: 12,
         repeat: -1
     });
     this.anims.create({
         key: 'hurt',
-        frames: [{ key: 'mario', frame: 4 }]
+        frames: [{ key: 'irys', frame: 4 }]
     });
     this.anims.create({
         key: 'jump',
-        frames: [{ key: 'mario', frame: 5 }]
+        frames: [{ key: 'irys', frame: 5 }]
     });
 
-    //> Grown Mario animations
+    //> Grown Irys animations
     this.anims.create({
-        key: 'grown-mario-idle',
-        frames: [{ key: 'mario-grown', frame: 0 }]
+        key: 'grown-irys-idle',
+        frames: [{ key: 'irys-grown', frame: 0 }]
     });
     this.anims.create({
-        key: 'grown-mario-run',
-        frames: this.anims.generateFrameNumbers('mario-grown', { start: 3, end: 1 }),
+        key: 'grown-irys-run',
+        frames: this.anims.generateFrameNumbers('irys-grown', { start: 3, end: 1 }),
         frameRate: 12,
         repeat: -1
     });
     this.anims.create({
-        key: 'grown-mario-crouch',
-        frames: [{ key: 'mario-grown', frame: 4 }]
+        key: 'grown-irys-crouch',
+        frames: [{ key: 'irys-grown', frame: 4 }]
     });
     this.anims.create({
-        key: 'grown-mario-jump',
-        frames: [{ key: 'mario-grown', frame: 5 }]
+        key: 'grown-irys-jump',
+        frames: [{ key: 'irys-grown', frame: 5 }]
     });
 
-    //> Fire Mario animations
+    //> Fire Irys animations
     this.anims.create({
-        key: 'fire-mario-idle',
-        frames: [{ key: 'mario-fire', frame: 0 }]
+        key: 'fire-irys-idle',
+        frames: [{ key: 'irys-fire', frame: 0 }]
     });
     this.anims.create({
-        key: 'fire-mario-run',
-        frames: this.anims.generateFrameNumbers('mario-fire', { start: 3, end: 1 }),
+        key: 'fire-irys-run',
+        frames: this.anims.generateFrameNumbers('irys-fire', { start: 3, end: 1 }),
         frameRate: 12,
         repeat: -1
     });
     this.anims.create({
-        key: 'fire-mario-crouch',
-        frames: [{ key: 'mario-fire', frame: 4 }]
+        key: 'fire-irys-crouch',
+        frames: [{ key: 'irys-fire', frame: 4 }]
     });
     this.anims.create({
-        key: 'fire-mario-jump',
-        frames: [{ key: 'mario-fire', frame: 5 }]
+        key: 'fire-irys-jump',
+        frames: [{ key: 'irys-fire', frame: 5 }]
     });
     this.anims.create({
-        key: 'fire-mario-throw',
-        frames: [{ key: 'mario-fire', frame: 6 }]
+        key: 'fire-irys-throw',
+        frames: [{ key: 'irys-fire', frame: 6 }]
     });
 
     //> Goomba animations

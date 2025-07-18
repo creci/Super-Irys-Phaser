@@ -183,22 +183,22 @@ function drawSettingsMenu() {
         {
             control: 'JUMP',
             text: this.add.text(screenWidth / 1.37, screenHeight / 2.25, displayChar(controlKeys.JUMP.keyCode), { fontFamily: 'pixel_nums', fontSize: (screenWidth / 55), align: 'center'}),
-            icon: this.add.sprite(screenWidth / 1.37, screenHeight / 2, 'mario').setScale(screenHeight / 500).setOrigin(0.5).anims.play('jump')
+            icon: this.add.sprite(screenWidth / 1.37, screenHeight / 2, 'irys').setScale(screenHeight / 500).setOrigin(0.5).anims.play('jump')
         },
         {
             control: 'DOWN',
             text: this.add.text(screenWidth / 1.37, screenHeight / 1.75, displayChar(controlKeys.DOWN.keyCode), { fontFamily: 'pixel_nums', fontSize: (screenWidth / 55), align: 'center'}),
-            icon: this.add.sprite(screenWidth / 1.37, screenHeight / 1.68, 'mario-grown').setScale(screenHeight / 550).setOrigin(0.6, 0).anims.play('grown-mario-crouch')
+            icon: this.add.sprite(screenWidth / 1.37, screenHeight / 1.68, 'irys-grown').setScale(screenHeight / 550).setOrigin(0.6, 0).anims.play('grown-irys-crouch')
         },
         {
             control: 'LEFT',
             text: this.add.text(screenWidth / 1.5, screenHeight / 1.75, displayChar(controlKeys.LEFT.keyCode), { fontFamily: 'pixel_nums', fontSize: (screenWidth / 55), align: 'center'}),
-            icon: this.add.sprite(screenWidth / 1.56, screenHeight / 1.75, 'mario').setScale(screenHeight / 500).setFlipX(true).setOrigin(0.6, 0.5)
+            icon: this.add.sprite(screenWidth / 1.56, screenHeight / 1.75, 'irys').setScale(screenHeight / 500).setFlipX(true).setOrigin(0.6, 0.5)
         },
         {
             control: 'RIGHT',
             text: this.add.text(screenWidth / 1.26, screenHeight / 1.75, displayChar(controlKeys.RIGHT.keyCode), { fontFamily: 'pixel_nums', fontSize: (screenWidth / 55), align: 'center'}),
-            icon: this.add.sprite(screenWidth / 1.22, screenHeight / 1.75, 'mario').setScale(screenHeight / 500).setOrigin(0.6, 0.5)
+            icon: this.add.sprite(screenWidth / 1.22, screenHeight / 1.75, 'irys').setScale(screenHeight / 500).setOrigin(0.6, 0.5)
         },
         {
             control: 'FIRE',

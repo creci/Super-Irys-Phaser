@@ -1,7 +1,7 @@
 
-# **Super Mario Phaser**
+# **Super Irys Phaser**
 
-Super Mario Phaser is a recreation of the classic Super Mario Bros game using the Phaser framework. This project aims to bring the nostalgic experience of playing the iconic platformer to modern web browsers. One exciting feature of this game is the random level generation, which ensures that each playthrough offers a unique and challenging experience.
+Super Irys Phaser is a recreation of the classic Super Mario Bros game using the Phaser framework. This project aims to bring the nostalgic experience of playing the iconic platformer to modern web browsers, but now featuring Irys as the main character. One exciting feature of this game is the random level generation, which ensures that each playthrough offers a unique and challenging experience.
 
 
 ## **Table of Contents**
@@ -13,7 +13,7 @@ Super Mario Phaser is a recreation of the classic Super Mario Bros game using th
 
 ### Demo
 
-A live demo of the game can be accessed at [https://decapapi.github.io/Super-Mario-Phaser/](https://decapapi.github.io/Super-Mario-Phaser/).
+A live demo of the game can be accessed at [https://decapapi.github.io/Super-Irys-Phaser/](https://decapapi.github.io/Super-Irys-Phaser/).
 
 Some screenshots of the game:
 

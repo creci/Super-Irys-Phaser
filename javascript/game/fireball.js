@@ -1,7 +1,7 @@
 
 function throwFireball() {
     this.fireballSound.play();
-    player.anims.play('fire-mario-throw');
+    player.anims.play('fire-irys-throw');
     playerFiring = true;
     fireInCooldown = true;
     setTimeout(() => {

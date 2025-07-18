@@ -1,7 +1,7 @@
 
 function createPlayer() {
     // Draw player
-    player = this.physics.add.sprite( /*screenWidth * 1.5*/ startOffset, screenHeight - platformHeight, 'mario').setOrigin(1).setBounce(0)
+    player = this.physics.add.sprite( /*screenWidth * 1.5*/ startOffset, screenHeight - platformHeight, 'irys').setOrigin(1).setBounce(0)
     .setCollideWorldBounds(true).setScale(screenHeight / 376);
     player.depth = 3;
     /*this.cameras.main.startFollow(player);
@@ -21,8 +21,8 @@ function decreasePlayerState() {
     this.anims.pauseAll();
     this.powerDownSound.play();
 
-    let anim1 = playerState == 2 ? 'fire-mario-idle' : 'grown-mario-idle';
-    let anim2 = playerState == 2 ? 'grown-mario-idle' : 'idle';
+    let anim1 = playerState == 2 ? 'fire-irys-idle' : 'grown-irys-idle';
+    let anim2 = playerState == 2 ? 'grown-irys-idle' : 'idle';
 
     applyPlayerInvulnerability.call(this, 3000);
     player.anims.play(anim2);
@@ -72,9 +72,9 @@ function updatePlayer(delta) {
         if (playerState == 0)
         player.anims.play('run', true).flipX = false;
         if (playerState == 1)
-        player.anims.play('grown-mario-run', true).flipX = false;
+        player.anims.play('grown-irys-run', true).flipX = false;
         if (playerState == 2)
-        player.anims.play('fire-mario-run', true);
+        player.anims.play('fire-irys-run', true);
 
         if(player.x >= worldWidth - (worldWidth / 75)) {
             this.tweens.add({
@@ -129,10 +129,10 @@ function updatePlayer(delta) {
             player.anims.play('run', true).flipX = true;
     
             if (playerState == 1)
-            player.anims.play('grown-mario-run', true).flipX = true;
+            player.anims.play('grown-irys-run', true).flipX = true;
     
             if (playerState == 2)
-            player.anims.play('fire-mario-run', true).flipX = true;
+            player.anims.play('fire-irys-run', true).flipX = true;
         }
 
         playerController.direction.positive = false;
@@ -151,10 +151,10 @@ function updatePlayer(delta) {
             player.anims.play('run', true).flipX = false;
     
             if (playerState == 1)
-            player.anims.play('grown-mario-run', true).flipX = false;
+            player.anims.play('grown-irys-run', true).flipX = false;
     
             if (playerState == 2)
-            player.anims.play('fire-mario-run', true).flipX = false;
+            player.anims.play('fire-irys-run', true).flipX = false;
         }
 
         playerController.direction.positive = true;
@@ -176,20 +176,20 @@ function updatePlayer(delta) {
             player.anims.play('idle', true);
     
             if (playerState == 1)
-            player.anims.play('grown-mario-idle', true);
+            player.anims.play('grown-irys-idle', true);
 
             if (playerState == 2)
-            player.anims.play('fire-mario-idle', true);
+            player.anims.play('fire-irys-idle', true);
         }
     }
 
     if (!playerFiring) {
         if (playerState > 0 && (controlKeys.DOWN.isDown|| this.joyStick.down)) {
             if (playerState == 1)
-            player.anims.play('grown-mario-crouch', true);
+            player.anims.play('grown-irys-crouch', true);
 
             if (playerState == 2)
-            player.anims.play('fire-mario-crouch', true);
+            player.anims.play('fire-irys-crouch', true);
 
             if (player.body.touching.down) {
                 player.setVelocityX(0);
@@ -219,10 +219,10 @@ function updatePlayer(delta) {
             player.anims.play('jump', true);
     
             if (playerState == 1)
-            player.anims.play('grown-mario-jump', true);
+            player.anims.play('grown-irys-jump', true);
     
             if (playerState == 2)
-            player.anims.play('fire-mario-jump', true);
+            player.anims.play('fire-irys-jump', true);
         }
     }
 }
