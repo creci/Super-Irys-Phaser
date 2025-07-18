@@ -66,8 +66,12 @@ var controlKeys = {
     LEFT: null,
     RIGHT: null,
     FIRE: null,
-    PAUSE: null
-
+    PAUSE: null,
+    // Arrow keys as duplicates
+    ARROW_UP: null,
+    ARROW_DOWN: null,
+    ARROW_LEFT: null,
+    ARROW_RIGHT: null
 };
 
 var score = 0;
@@ -366,6 +370,12 @@ function createControls() {
       controlKeys[keyName] = this.input.keyboard.addKey(keyCode);
     });
 
+    // Add arrow keys as duplicates
+    controlKeys.ARROW_UP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP);
+    controlKeys.ARROW_DOWN = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.DOWN);
+    controlKeys.ARROW_LEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
+    controlKeys.ARROW_RIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
+
     /*
     controlKeys.PAUSE.on('down', function () {
         if (!this.settingsMenuOpen)
@@ -449,6 +459,7 @@ function drawWorld() {
 
     //> Final flag
     this.finalFlagMast = this.add.tileSprite(worldWidth - (worldWidth / 30), propsY, 16, 167, 'flag-mast').setOrigin(0, 1).setScale(screenHeight / 400);
+    this.finalFlagMast.depth = 3;
     this.physics.add.existing(this.finalFlagMast);
     this.finalFlagMast.immovable = true;
     this.finalFlagMast.allowGravity = false;
@@ -458,10 +469,12 @@ function drawWorld() {
 
     //> Flag
     this.finalFlag = this.add.image(worldWidth - (worldWidth / 30), propsY * 0.93, 'final-flag').setOrigin(0.5, 1);
-    this.finalFlag.setScale(screenHeight / 400);
+    this.finalFlag.setDisplaySize(64, 64);
+    this.finalFlag.depth = 4;
 
     //> Castle
-    this.add.image(worldWidth - (worldWidth / 75), propsY, 'castle').setOrigin(0.5, 1).setScale(screenHeight / 300);
+    let castle = this.add.image(worldWidth - (worldWidth / 75), propsY, 'castle').setOrigin(0.5, 1).setScale(screenHeight / 300);
+    castle.depth = 2;
 }
 
 function generateLevel() {

@@ -112,9 +112,9 @@ function updatePlayer(delta) {
     // https://codepen.io/rexrainbow/pen/oyqvQY
 
     // > Vertical movement
-    if ((controlKeys.JUMP.isDown || this.joyStick.up) && player.body.touching.down) {
+    if ((controlKeys.JUMP.isDown || controlKeys.ARROW_UP.isDown || this.joyStick.up) && player.body.touching.down) {
         this.jumpSound.play();
-        (playerState > 0 && (controlKeys.DOWN.isDown|| this.joyStick.down)) ? player.setVelocityY(-velocityY / 1.25) : player.setVelocityY(-velocityY);
+        (playerState > 0 && (controlKeys.DOWN.isDown || controlKeys.ARROW_DOWN.isDown || this.joyStick.down)) ? player.setVelocityY(-velocityY / 1.25) : player.setVelocityY(-velocityY);
     }
 
     // > Horizontal movement and animations
@@ -122,7 +122,7 @@ function updatePlayer(delta) {
     let targetVelocityX;
     let newVelocityX;
 
-    if (controlKeys.LEFT.isDown || this.joyStick.left) {
+    if (controlKeys.LEFT.isDown || controlKeys.ARROW_LEFT.isDown || this.joyStick.left) {
         smoothedControls.moveLeft(delta);
         if (!playerFiring) {
             if (playerState == 0)
@@ -144,7 +144,7 @@ function updatePlayer(delta) {
         newVelocityX = Phaser.Math.Linear(oldVelocityX, targetVelocityX, -smoothedControls.value);
 
         player.setVelocityX(newVelocityX);
-    } else if (controlKeys.RIGHT.isDown || this.joyStick.right) {
+    } else if (controlKeys.RIGHT.isDown || controlKeys.ARROW_RIGHT.isDown || this.joyStick.right) {
         smoothedControls.moveRight(delta);
         if (!playerFiring) {
             if (playerState == 0)
@@ -171,7 +171,7 @@ function updatePlayer(delta) {
             smoothedControls.reset();
         if (player.body.touching.down)
             player.setVelocityX(0);
-        if (!(controlKeys.JUMP.isDown|| this.joyStick.up) && !playerFiring) {
+        if (!(controlKeys.JUMP.isDown || controlKeys.ARROW_UP.isDown || this.joyStick.up) && !playerFiring) {
             if (playerState == 0)
             player.anims.play('idle', true);
     
@@ -184,7 +184,7 @@ function updatePlayer(delta) {
     }
 
     if (!playerFiring) {
-        if (playerState > 0 && (controlKeys.DOWN.isDown|| this.joyStick.down)) {
+        if (playerState > 0 && (controlKeys.DOWN.isDown || controlKeys.ARROW_DOWN.isDown || this.joyStick.down)) {
             if (playerState == 1)
             player.anims.play('grown-irys-crouch', true);
 
